@@ -34,7 +34,7 @@ def extract_url_from_html_content(html_content, root_url):
 
 def save_html(html_content, save_path):
     try:
-        with open(save_path, mode="w") as f:
+        with open(save_path, mode="w", encoding="UTF-8") as f:
             f.write(html_content)
     except:
         print(f"Error occured saving {save_path}")

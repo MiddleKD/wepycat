@@ -29,7 +29,7 @@ def scroll_down(driver, scroll_pause_time=0.5):
         new_height = driver.execute_script("return document.body.scrollHeight")
 
         # 페이지 높이가 변하지 않거나, 스크롤바가 아래까지 내려갔으면 스크롤 다운 종료
-        if new_height == last_height and driver.execute_script("return window.innerHeight + window.pageYOffset >= document.body.offsetHeight"):
+        if new_height == last_height or driver.execute_script("return window.innerHeight + window.pageYOffset >= document.body.offsetHeight"):
             break
 
         # 페이지 높이 업데이트
